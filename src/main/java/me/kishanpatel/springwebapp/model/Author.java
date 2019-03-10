@@ -23,7 +23,7 @@ public class Author {
     public Author() {
     }
 
-    public Author(String fileName, String lastName){
+    public Author(String fileName, String lastName) {
         this.fileName = fileName;
         this.fileName = lastName;
     }
@@ -60,4 +60,29 @@ public class Author {
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Author author = (Author) o;
+
+        return id != null ? id.equals(author.id) : author.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", fileName='" + fileName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", books=" + books +
+                '}';
+    }
 }
+
