@@ -14,7 +14,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String fileName;
+    private String firstName;
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
@@ -23,17 +23,17 @@ public class Author {
     public Author() {
     }
 
-    public Author(String fileName, String lastName) {
-        this.fileName = fileName;
-        this.fileName = lastName;
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -79,7 +79,7 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", fileName='" + fileName + '\'' +
+                ", fileName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", books=" + books +
                 '}';
